@@ -11,8 +11,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef PRUEBA_STACK_H
-#define PRUEBA_STACK_H
+#ifndef STACK_H
+#define STACK_H
 
 
 #include <iostream>
@@ -25,8 +25,8 @@ using namespace std;
 
 class stak: public Queue{
 private:
-    stack <int> Stk;
-    stack <int> auxStk;
+    stack <int> Stack;
+    stack <int> aux;
 public:
     bool empty();
     int size();
@@ -39,4 +39,4 @@ public:
 
 
 
-#endif //PRUEBA_STACK_H
+#endif //STACK_H

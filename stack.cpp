@@ -17,13 +17,13 @@
 
 //Verificar si la cola está vacía
 bool stak::empty(){
-    return Stk.empty();
+    return Stack.empty();
 }
 
 
 //Obtener el tamaño de la cola
 int stak::size(){
-    return Stk.size();
+    return Stack.size();
 }
 
 
@@ -31,19 +31,17 @@ int stak::size(){
 int stak::front(){
 
     int first;
-
-  //  cout << "Accediendo al primer elemento de la cola" << endl;
-
-    while(!Stk.empty()){
-        auxStk.push(Stk.top());
-        Stk.pop();
+    
+    while(!Stack.empty()){
+        aux.push(Stack.top());
+        Stack.pop();
     }
 
-    first = auxStk.top();
+    first = aux.top();
 
-    while(!auxStk.empty()){
-        Stk.push(auxStk.top());
-        auxStk.pop();
+    while(!aux.empty()){
+        Stack.push(aux.top());
+        aux.pop();
     }
 
     return first;
@@ -52,48 +50,45 @@ int stak::front(){
 
 //Acceder al último elemento de la cola
 int stak::back(){
-    return Stk.top();
+    return Stack.top();
 }
 
 
 //Insertar un elemento en la cola
 void stak::push(int x){
-    Stk.push(x);
-  //  cout << "Elemento insertado" << endl;
+    Stack.push(x);
 }
 
 
 //Eliminar el primer elemento de la cola
 void stak::pop(){
 
-    while(!Stk.empty()){
-        auxStk.push(Stk.top());
-        Stk.pop();
+    while(!Stack.empty()){
+        aux.push(Stack.top());
+        Stack.pop();
     }
 
-    auxStk.pop();
+    aux.pop();
 
-    while(!auxStk.empty()){
-        Stk.push(auxStk.top());
-        auxStk.pop();
+    while(!aux.empty()){
+        Stack.push(aux.top());
+        aux.pop();
     }
-
-   // cout << "Elemento eliminado" << endl;
 }
 
 
 //Intercambiar el contenido entre dos colas
 void stak::swap(Queue* q){
-    while(!Stk.empty()){
-        auxStk.push(Stk.top());
-        Stk.pop();
+    while(!Stack.empty()){
+        aux.push(Stack.top());
+        Stack.pop();
     }
     while(!q->empty()){
-        Stk.push(q->back());
+        Stack.push(q->back());
         q->pop();
     }
-    while(!auxStk.empty()){
-        q->push(auxStk.top());
-        auxStk.pop();
+    while(!aux.empty()){
+        q->push(aux.top());
+        aux.pop();
     }
 }

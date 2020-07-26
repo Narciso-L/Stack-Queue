@@ -11,8 +11,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef PRUEBA_QUEUE_H
-#define PRUEBA_QUEUE_H
+#ifndef QUEUE_H
+#define QUEUE_H
 
 
 class Queue{
@@ -27,4 +27,4 @@ public:
 };
 
 
-#endif //PRUEBA_QUEUE_H
+#endif
